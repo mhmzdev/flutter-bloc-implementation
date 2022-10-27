@@ -3,6 +3,7 @@ import 'dart:convert';
 import 'package:weather_data_provider/weather_data_provider.dart';
 import 'package:http/http.dart' as http;
 
+// A Typical data provider layer that we usually have, calling of APIs and getting data
 class WeatherDataProvider {
   static const _baseUrlWeather = 'api.open-meteo.com';
   static const _baseUrlGeocoding = 'geocoding-api.open-meteo.com';

@@ -53,6 +53,8 @@ class Weather {
     };
   }
 
+  // A method that bascially gives Weather (Model in this layer) by
+  // converting Weather (Model from Repository layer)
   factory Weather.fromRepository(weather_repository.Weather weather) {
     return Weather(
       lastUpdated: DateTime.now(),

@@ -10,14 +10,13 @@ part 'weather_state.dart';
 class WeatherCubit extends Cubit<WeatherState> {
   WeatherCubit() : super(const WeatherInitial());
 
-  // final WeatherRepository _repository;
-  final repo = WeatherRepository();
+  final _repository = WeatherRepository();
 
   Future<void> fetch(String city) async {
     emit(const WeatherLoading());
 
     try {
-      final data = await repo.getWeather(city);
+      final data = await _repository.getWeather(city);
       final weather = Weather.fromRepository(data);
 
       emit(
@@ -33,7 +32,7 @@ class WeatherCubit extends Cubit<WeatherState> {
 
   Future<void> refresh() async {
     try {
-      final data = await repo.getWeather(
+      final data = await _repository.getWeather(
         state.weather?.location ?? 'New York',
       );
 

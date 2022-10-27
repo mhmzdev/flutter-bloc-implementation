@@ -14,12 +14,13 @@ class AppView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // This is the traditional way of handling cubit/providers (if any)
     return MultiBlocProvider(
       providers: [
         BlocProvider(create: (_) => WeatherCubit()),
       ],
       child: MaterialApp(
-        title: 'Flutter Demo',
+        title: 'Flutter Bloc Implementation',
         theme: ThemeData(
           primarySwatch: Colors.blue,
         ),
