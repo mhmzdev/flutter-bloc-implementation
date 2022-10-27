@@ -3,6 +3,8 @@ import 'package:bloc_app/screens/weather/views/weather_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import 'configs/core_theme.dart' as theme;
+
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
 
@@ -21,9 +23,7 @@ class AppView extends StatelessWidget {
       ],
       child: MaterialApp(
         title: 'Flutter Bloc Implementation',
-        theme: ThemeData(
-          primarySwatch: Colors.blue,
-        ),
+        theme: theme.themeLight,
         home: const WeatherView(),
       ),
     );
