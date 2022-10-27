@@ -1,16 +1,73 @@
-# bloc_app
+## Weather App
 
-A new Flutter project.
+It is very close implementation to actual bloc architecture: https://bloclibrary.dev/#/flutterweathertutorial
 
-## Getting Started
+*Just includes the fetching of Weather at the moment, not other features*
 
-This project is a starting point for a Flutter application.
+### Implementation
+It includes 4 layers:
 
-A few resources to get you started if this is your first Flutter project:
+1. Data layer (data provider)
+2. Repository layer
+3. Business layer (cubit/state)
+3. Presentation layer (front-end/UI)
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+And you start coding them respectively. Overall concept for this architecture will be:
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+**Your Data Layer must be hidden/abstracted from your business/presentation layer, so the point of interaction will be the respository layer**
+
+### Terminologies
+#### Barrel
+- Just a file that exports other files to clean-up imports
+
+### Extensions
+#### Bloc
+- VS Code extension: https://marketplace.visualstudio.com/items?itemName=FelixAngelov.bloc
+- Dart Data Class Generator: https://marketplace.visualstudio.com/items?itemName=hzgood.dart-data-class-generator
+
+### Project structure
+
+### Business and Presentation layer
+
+```dart
+lib
+    - extensions
+        - ...
+    -  screens/
+        - weather/
+            - cubits (Business layer)
+                - weather_cubit.dart
+                - weather_state.dart
+            - models
+                - models.dart (Barrel)
+            - views (Presentation layer)
+                - weather_view.dart (Entry point of UI)
+                - widgets/
+                    - error.dart
+                    - loading.dart
+                    - success.dart
+                    - widgets.dart (Barrel)
+```
+
+### Data and Repository layers
+```dartweather_data_provider
+packages
+    - weather_data_provider/ (Data layer - Abstracted/Hidden)
+        - lib/
+            - src/
+                - models/
+                    - models.dart (barrel)
+                    - location.dart
+                    - weather.dart
+            - weather_data_provider.dart (data provider implementation)
+        - weather_data_provider (Barrel)
+
+    - weather_repository (Repository layer)
+        - lib/
+            - src/
+                - models
+                    - models.dart (barrel)
+                    - weather.dart
+            - weather_repository.dart (repository implementation)
+        - weather_repository.dart (barrel)
+```
