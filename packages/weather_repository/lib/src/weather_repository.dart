@@ -1,4 +1,4 @@
-import 'package:weather_api/weather_api.dart' hide Weather;
+import 'package:weather_data_provider/weather_data_provider.dart' hide Weather;
 import 'package:weather_repository/weather_repository.dart';
 
 class WeatherRepository {

@@ -12,7 +12,7 @@ dependencies:
   flutter:
     sdk: flutter
 
-  weather_api:
+  weather_data_provider:
     path: ../weather_data_provider
 
 dev_dependencies:

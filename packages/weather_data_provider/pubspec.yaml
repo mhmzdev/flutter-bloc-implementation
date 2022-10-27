@@ -1,4 +1,4 @@
-name: weather_api
+name: weather_data_provider
 description: A Dart API Client for the Open-Meteo API.
 version: 1.0.0+1
 
