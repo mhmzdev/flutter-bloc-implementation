@@ -2,7 +2,7 @@ import 'package:bloc_app/screens/weather/models/weather.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import 'package:bloc_app/screens/weather/cubit/cubit/weather_cubit.dart';
+import 'package:bloc_app/screens/weather/cubit/weather_cubit.dart';
 import 'package:bloc_app/screens/weather/views/widgets/widgets.dart';
 
 class WeatherView extends StatefulWidget {

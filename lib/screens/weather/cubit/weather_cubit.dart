@@ -8,9 +8,9 @@ import 'package:weather_repository/weather_repository.dart'
 part 'weather_state.dart';
 
 class WeatherCubit extends Cubit<WeatherState> {
-  WeatherCubit() : super(const WeatherInitial());
+  WeatherCubit(this._repository) : super(const WeatherInitial());
 
-  final _repository = WeatherRepository();
+  final WeatherRepository _repository;
 
   Future<void> fetch(String city) async {
     emit(const WeatherLoading());
