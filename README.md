@@ -50,7 +50,8 @@ lib
 ```
 
 ### Data and Repository layers
-```dartweather_data_provider
+
+```dart
 packages
     - weather_data_provider/ (Data layer - Abstracted/Hidden)
         - lib/
